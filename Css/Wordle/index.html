@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wordle Clone</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <a href="../index.html" class="back-home-btn">Back to Home</a>
+    <h1>Wordle Clone</h1>
+
+    <div id="game-board"></div>
+
+    <div id="keyboard-container"></div>
+
+    <div id="toast" aria-live="polite" role="status"></div>
+
+    <!-- Game End Popup -->
+    <div id="popup-overlay">
+      <div id="popup-box">
+        <h2 id="popup-title">Game Over!</h2>
+        <p id="popup-score">Your score: 0 / 60</p>
+        <p id="popup-guesses">Guesses used: 0</p>
+        <button id="popup-btn">Play Again</button>
+      </div>
+    </div>
+  </body>
+</html>
