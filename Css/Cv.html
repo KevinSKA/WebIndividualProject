@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Your CV</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <nav aria-label="Main navigation">
+        <h2>Site Navigation</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <div class="nav-line"></div>
+            <li><a href="history.html">History of the Web & Browsers</a></li>
+            <li><a href="security.html">Security on the Web</a></li>
+            <li><a href="mobile.html">Mobile-First Development</a></li>
+            <li><a href="stats.html">Internet Stats (Middle East & Lebanon)</a></li>
+            <li><a href="arabicPage.html">Technological Advancements in the Arab World</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="research.html">Research</a></li>
+            <div class="nav-line"></div>
+            <li><a href="Cv.html" aria-disabled="true" onclick="event.preventDefault();">CV</a>
+            </li>
+            <li><a href="../index.html" class="main-hub-link">Main Hub</a></li>
+        </ul>
+    </nav>
+  <div class="container">
+    <h1>Create Your CV</h1>
+    <form id="cvForm">
+      <!-- ================= PERSONAL INFO ================= -->
+      <h2>Personal Information</h2>
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+
+      <label for="jobTitle">Job Title:</label>
+      <input type="text" id="jobTitle" name="jobTitle" placeholder="e.g. Software Engineer" required>
+
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" placeholder="City, Country">
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob">
+
+      <label for="profilePhoto">Profile Picture:</label>
+      <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*">
+
+      <hr>
+
+      <!-- ================= PROFILE SUMMARY ================= -->
+      <h2>Profile Summary</h2>
+      <textarea id="profile" name="profile" rows="5" placeholder="Write a short professional summary about yourself..."></textarea>
+
+      <hr>
+
+      <!-- ================= EMPLOYMENT HISTORY ================= -->
+      <h2>Employment History</h2>
+      <div class="employment">
+  <label for="job1Title">Job Title:</label>
+  <input type="text" id="job1Title" name="jobTitle" placeholder="e.g. Backend Intern">
+
+  <label for="job1Company">Company Name:</label>
+  <input type="text" id="job1Company" name="companyName" placeholder="e.g. Netvariant">
+
+  <label for="job1Start">Start Date:</label>
+  <input type="month" id="job1Start" name="jobStart">
+
+  <label for="job1End">End Date:</label>
+  <input type="month" id="job1End" name="jobEnd">
+
+  <label for="job1Location">Location:</label>
+  <input type="text" id="job1Location" name="jobLocation" placeholder="e.g. Sin el Fil">
+</div>
+
+
+      <button type="button" id="addJobBtn">+ Add Another Job</button>
+
+      <hr>
+
+      <!-- ================= EDUCATION ================= -->
+      <h2>Education</h2>
+<div class="education">
+  <label for="edu1School">Institution:</label>
+  <input type="text" id="edu1School" name="schoolName">
+
+  <label for="edu1Degree">Degree / Major:</label>
+  <input type="text" id="edu1Degree" name="degree">
+
+  <label for="edu1Start">Start Date:</label>
+  <input type="month" id="edu1Start" name="eduStart">
+
+  <label for="edu1End">End Date:</label>
+  <input type="month" id="edu1End" name="eduEnd">
+
+  <label for="edu1Location">Location:</label>
+  <input type="text" id="edu1Location" name="eduLocation">
+</div>
+
+      <button type="button" id="addEducationBtn">+ Add Another Education</button>
+
+      <hr>
+
+      <!-- ================= SKILLS ================= -->
+      <h2>Skills</h2>
+      <div class="skills">
+        <label for="skill1Name">Skill:</label>
+        <input type="text" id="skill1Name" name="skillName">
+
+        <label for="skill1Level">Level:</label>
+        <select id="skill1Level" name="skillLevel">
+          <option value="">Select level</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="expert">Expert</option>
+        </select>
+      </div>
+
+      <button type="button" id="addSkillBtn">+ Add Another Skill</button>
+
+      <hr>
+
+      <!-- ================= CERTIFICATES / DOCUMENTS ================= -->
+      <h2>Certificates & Documents</h2>
+      <label for="certificates">Upload Certificates (PDF / Image):</label>
+      <input type="file" id="certificates" name="certificates" multiple accept=".pdf,image/*">
+
+      <hr>
+
+      <!-- ================= SUBMIT ================= -->
+      <button type="submit">Generate CV</button>
+    </form>
+  </div>
+    <script src="form.js"></script>
+</body>
+</html>

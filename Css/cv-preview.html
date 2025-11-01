@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your CV</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="cv-page">
+   <nav aria-label="Main navigation">
+        <h2>Site Navigation</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <div class="nav-line"></div>
+            <li><a href="history.html">History of the Web & Browsers</a></li>
+            <li><a href="security.html">Security on the Web</a></li>
+            <li><a href="mobile.html">Mobile-First Development</a></li>
+            <li><a href="stats.html">Internet Stats (Middle East & Lebanon)</a></li>
+            <li><a href="arabicPage.html">Technological Advancements in the Arab World</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="research.html">Research</a></li>
+            <div class="nav-line"></div>
+            <li><a href="Cv.html">CV</a></li>
+            <li><a href="../index.html" class="main-hub-link">Main Hub</a></li>
+        </ul>
+    </nav>
+  <div class="cv-container" id="cvContainer">
+    <p>Loading your CV...</p>
+  </div>
+
+  <div class="cv-footer">
+    <button class="download-btn" onclick="window.print()">Download as PDF</button>
+  </div>
+
+  <script>
+    const data = JSON.parse(localStorage.getItem("cvData"));
+    const container = document.getElementById("cvContainer");
+
+    if (!data) {
+      container.innerHTML = "<p>No CV data found. Please go back and fill out the form.</p>";
+    } else {
+      const { personalInfo, profile, employment, education, skills, certificates } = data;
+
+      container.innerHTML = `
+        <div class="cv-header">
+          ${personalInfo.photo ? `<img src="${personalInfo.photo}" alt="Profile Picture">` : ""}
+          <div class="info">
+            <h1>${personalInfo.fullName}</h1>
+            <h2>${personalInfo.jobTitle || ""}</h2>
+            <p><strong>Email:</strong> ${personalInfo.email}</p>
+            <p><strong>Phone:</strong> ${personalInfo.phone}</p>
+            <p><strong>Address:</strong> ${personalInfo.address || ""}</p>
+            <p><strong>Date of Birth:</strong> ${personalInfo.dob || ""}</p>
+          </div>
+        </div>
+
+        <div class="cv-section">
+          <h3>Profile Summary</h3>
+          <p>${profile || "No profile summary provided."}</p>
+        </div>
+
+        <div class="cv-section">
+          <h3>Employment History</h3>
+          ${
+            employment.length
+              ? employment.map(job => `
+                <p><strong>${job.title || ""}</strong> at <strong>${job.company || ""}</strong></p>
+                <p>${job.start || ""} - ${job.end || ""} | ${job.location || ""}</p>
+              `).join("<hr>")
+              : "<p>No employment records.</p>"
+          }
+        </div>
+
+        <div class="cv-section">
+          <h3>Education</h3>
+          ${
+            education.length
+              ? education.map(edu => `
+                <p><strong>${edu.degree || ""}</strong>, ${edu.school || ""}</p>
+                <p>${edu.start || ""} - ${edu.end || ""} | ${edu.location || ""}</p>
+              `).join("<hr>")
+              : "<p>No education records.</p>"
+          }
+        </div>
+
+        <div class="cv-section">
+          <h3>Skills</h3>
+          ${
+            skills.length
+              ? `<ul>${skills.map(skill => `<li>${skill.name || ""} - ${skill.level || ""}</li>`).join("")}</ul>`
+              : "<p>No skills listed.</p>"
+          }
+        </div>
+
+        <div class="cv-section">
+          <h3>Certificates</h3>
+          ${
+            certificates && certificates.length
+              ? certificates.map(cert => `
+                <div class="cv-certificate">
+                  <p>${cert.name}</p>
+                  ${cert.data.startsWith("data:application/pdf") 
+                    ? `<a href="${cert.data}" target="_blank">View PDF</a>` 
+                    : `<img src="${cert.data}" style="max-width:200px;border-radius:6px;">`}
+                </div>
+              `).join("")
+              : "<p>No certificates uploaded.</p>"
+          }
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
