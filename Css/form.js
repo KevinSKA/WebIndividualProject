@@ -1,10 +1,39 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("cvForm");
 
-    // Handle dynamic section addition
     const addJobBtn = document.getElementById("addJobBtn");
     const addEducationBtn = document.getElementById("addEducationBtn");
     const addSkillBtn = document.getElementById("addSkillBtn");
+
+    function addRemoveButton(type, container) {
+        const oldBtn = container.querySelector(".remove-section-btn");
+        if (oldBtn) oldBtn.remove();
+
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = `Remove ${type.charAt(0).toUpperCase() + type.slice(1)}`;
+        btn.className = "remove-section-btn";
+
+        btn.addEventListener("click", () => {
+            const allOfType = form.querySelectorAll("." + type);
+            if (allOfType.length > 1) {
+                container.remove();
+            } else {
+                alert(`You must have at least one ${type} section.`);
+            }
+        });
+
+        container.appendChild(btn);
+    }
+
+    const firstEmployment = form.querySelector(".employment");
+    if (firstEmployment) addRemoveButton("employment", firstEmployment);
+
+    const firstEducation = form.querySelector(".education");
+    if (firstEducation) addRemoveButton("education", firstEducation);
+
+    const firstSkill = form.querySelector(".skills");
+    if (firstSkill) addRemoveButton("skills", firstSkill);
 
     addJobBtn.addEventListener("click", () => addSection("employment"));
     addEducationBtn.addEventListener("click", () => addSection("education"));
@@ -63,7 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 </fieldset>`;
         }
 
-         let insertBeforeEl;
+        addRemoveButton(type, container);
+
+        let insertBeforeEl;
         if (type === "employment") insertBeforeEl = addJobBtn;
         else if (type === "education") insertBeforeEl = addEducationBtn;
         else insertBeforeEl = addSkillBtn;
@@ -71,7 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
         insertBeforeEl.before(container);
     }
 
-    // Handle form submission
     form.addEventListener("submit", (e) => {
         e.preventDefault();
 
@@ -110,7 +140,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 })),
             };
 
-            // Handle certificates
             const certFiles = document.getElementById("certificates").files;
             const certPromises = [...certFiles].map(file => {
                 return new Promise((resolve) => {

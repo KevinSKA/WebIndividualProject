@@ -655,3 +655,18 @@ body.cv-page {
   background: #e7e7e7;
   color: #333;
 }
+.remove-section-btn {
+  margin-top: 8px;
+  display: inline-block;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #c0392b;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.remove-section-btn:hover {
+  opacity: 0.9;
+}

@@ -32,7 +32,6 @@
   <div class="container">
     <h1>Create Your CV</h1>
     <form id="cvForm">
-      <!-- ================= PERSONAL INFO ================= -->
       <h2>Personal Information</h2>
       <label for="fullName">Full Name:</label>
       <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
@@ -57,13 +56,11 @@
 
       <hr>
 
-      <!-- ================= PROFILE SUMMARY ================= -->
       <h2>Profile Summary</h2>
       <textarea id="profile" name="profile" rows="5" placeholder="Write a short professional summary about yourself..."></textarea>
 
       <hr>
 
-      <!-- ================= EMPLOYMENT HISTORY ================= -->
       <h2>Employment History</h2>
       <div class="employment">
   <label for="job1Title">Job Title:</label>
@@ -80,14 +77,13 @@
 
   <label for="job1Location">Location:</label>
   <input type="text" id="job1Location" name="jobLocation" placeholder="e.g. Sin el Fil">
-</div>
+</div>  
 
 
       <button type="button" id="addJobBtn">+ Add Another Job</button>
 
       <hr>
 
-      <!-- ================= EDUCATION ================= -->
       <h2>Education</h2>
 <div class="education">
   <label for="edu1School">Institution:</label>
@@ -110,7 +106,6 @@
 
       <hr>
 
-      <!-- ================= SKILLS ================= -->
       <h2>Skills</h2>
       <div class="skills">
         <label for="skill1Name">Skill:</label>
@@ -129,17 +124,34 @@
 
       <hr>
 
-      <!-- ================= CERTIFICATES / DOCUMENTS ================= -->
       <h2>Certificates & Documents</h2>
       <label for="certificates">Upload Certificates (PDF / Image):</label>
       <input type="file" id="certificates" name="certificates" multiple accept=".pdf,image/*">
 
       <hr>
 
-      <!-- ================= SUBMIT ================= -->
       <button type="submit">Generate CV</button>
     </form>
   </div>
     <script src="form.js"></script>
+    <footer>
+      <p>Created by <strong>Kevin Skayem</strong></p>
+
+      <p>
+        Contact:<br />
+        Email: <a href="mailto:kevin.skayem@gmail.com">kevin.skayem@gmail.com</a
+        ><br />
+        LinkedIn:
+        <a
+          href="https://www.linkedin.com/in/kevin-skayem-0541561b9"
+          target="_blank"
+          >Click here</a
+        >
+      </p>
+      <p>
+        AI assistance disclosure: Parts of this project were supported by AI
+        tools.
+      </p>
+    </footer>
 </body>
 </html>
