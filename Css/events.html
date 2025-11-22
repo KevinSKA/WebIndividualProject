@@ -34,6 +34,7 @@
         </nav>
     </header>
 <body>
+    <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search for events..">
   <table>
     <thead>
       <tr>
@@ -483,5 +484,20 @@
         tools.
       </p>
     </footer>
+    <script>
+function searchTable() {
+    const input = document.getElementById("searchInput");
+    const filter = input.value.toLowerCase();
+    const table = document.querySelector("table");
+    const tr = table.getElementsByTagName("tr");
+
+    for (let i = 1; i < tr.length; i++) {
+        let row = tr[i];
+        let text = row.textContent.toLowerCase();
+        row.style.display = text.includes(filter) ? "" : "none";
+    }
+}
+</script>
+
 </body>
 </html>
