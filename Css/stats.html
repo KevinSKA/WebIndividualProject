@@ -10,32 +10,64 @@
     <header>
       <h1>History of the Web & Browsers</h1>
       <nav aria-label="Main navigation">
-        <h2>Site Navigation</h2>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <div class="nav-line"></div>
-          <li><a href="history.html">History of the Web & Browsers</a></li>
-          <li><a href="security.html">Security on the Web</a></li>
-          <li><a href="mobile.html">Mobile-First Development</a></li>
-          <li>
-            <a href="stats.html">Internet Stats (Middle East & Lebanon)</a>
-          </li>
-          <li>
-            <a href="arabicPage.html"
-              >Technological Advancements in the Arab World</a
-            >
-          </li>
-          <li><a href="references.html">References</a></li>
-          <li><a href="research.html">Research</a></li>
-          <div class="nav-line"></div>
-          <li><a href="Cv.html">CV Maker</a></li>
-          <li><a href="cvExample.html">My Cv</a></li>
-          <div class="nav-line"></div>
-          <li><a href="Schedule.html">Schedule</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="../index.html" class="main-hub-link">Main Hub</a></li>
-        </ul>
-      </nav>
+    <h2>Site Navigation</h2>
+    <ul class="nav-root">
+        <!-- Home -->
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+
+        <!-- Articles dropdown -->
+        <li class="has-submenu">
+            <button class="nav-section" type="button">
+                Articles
+                <span class="chevron">▾</span>
+            </button>
+            <ul class="submenu">
+                <li><a href="history.html">History of the Web & Browsers</a></li>
+                <li><a href="security.html">Security on the Web</a></li>
+                <li><a href="mobile.html">Mobile-First Development</a></li>
+                <li><a href="stats.html">Internet Stats (Middle East & Lebanon)</a></li>
+                <li><a href="arabicPage.html">Technological Advancements in the Arab World</a></li>
+                <li><a href="references.html">References</a></li>
+                <li><a href="research.html">Research</a></li>
+            </ul>
+        </li>
+
+        <!-- Games dropdown -->
+        <li class="has-submenu">
+            <button class="nav-section" type="button">
+                Games
+                <span class="chevron">▾</span>
+            </button>
+            <ul class="submenu">
+                <li><a href="Wordle/index.html">Wordle</a></li>
+                <li><a href="TicTacToe/index.html">Tic Tac Toe</a></li>
+            </ul>
+        </li>
+
+        <!-- CVs dropdown -->
+        <li class="has-submenu">
+            <button class="nav-section" type="button">
+                CVs / Schedule
+                <span class="chevron">▾</span>
+            </button>
+            <ul class="submenu">
+                <li><a href="Cv.html">CV Maker</a></li>
+                <li><a href="cvExample.html">My CV</a></li>
+                <li><a href="Schedule.html">Schedule</a></li>
+            </ul>
+        </li>
+        <!-- Events -->
+         <li><a href="events.html">Events</a></li>
+
+        <!-- Main Hub -->
+        <li>
+            <a href="../index.html" class="main-hub-link">Main Hub</a>
+        </li>
+    </ul>
+</nav>
+
     </header>
 
     <main>

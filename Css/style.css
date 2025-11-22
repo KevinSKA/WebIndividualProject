@@ -670,3 +670,70 @@ body.cv-page {
 .remove-section-btn:hover {
   opacity: 0.9;
 }
+
+/* --- Dropdown navigation --- */
+
+.has-submenu {
+  position: relative;
+}
+
+/* Section header button (e.g., Articles, Games, CVs, Extras) */
+.nav-section {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font: inherit;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-section:hover,
+.has-submenu:focus-within .nav-section {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+/* Little chevron arrow */
+.nav-section .chevron {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* Submenu container */
+.submenu {
+  list-style: none;
+  margin-top: 4px;
+  margin-left: 4px;
+  padding-left: 6px;
+  border-left: 2px solid rgba(76, 175, 80, 0.25);
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.25s ease, opacity 0.25s ease;
+}
+
+/* Show submenu on hover or when focused (for keyboard users) */
+.has-submenu:hover .submenu,
+.has-submenu:focus-within .submenu {
+  max-height: 500px; /* big enough to show all links */
+  opacity: 1;
+}
+
+/* Links inside dropdown: slightly smaller and indented */
+.submenu li a {
+  font-size: 0.95rem;
+  padding: 6px 10px 6px 18px;
+}
+
+/* Keep hover style consistent with main links */
+.submenu li a:hover {
+  background-color: #4caf50;
+  color: #fff;
+}
